@@ -23,6 +23,17 @@ preMerge :
         command:
             - "go get -d ./..."
             - "go mod vendor"
+    - name: package-3
+      path : "./update-urls"
+      pattern:
+        # glob-patterns to discover tests to run in case of postMerge
+        - ""
+      framework : golang
+      preRun: 
+        runEveryTime: false # if set to true it will run on test execution as well
+        command:
+            - "go get -d ./..."
+            - "go mod vendor"
 postMerge: 
   subModules:
     - name: package-1
@@ -38,6 +49,17 @@ postMerge:
             - "go mod vendor"
     - name: package-2
       path : "./scrape"
+      pattern:
+        # glob-patterns to discover tests to run in case of postMerge
+        - ""
+      framework : golang
+      preRun: 
+        runEveryTime: false # if set to true it will run on test execution as well
+        command:
+            - "go get -d ./..."
+            - "go mod vendor"
+    - name: package-3
+      path : "./update-urls"
       pattern:
         # glob-patterns to discover tests to run in case of postMerge
         - ""
