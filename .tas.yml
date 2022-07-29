@@ -4,7 +4,7 @@ preMerge :
     - name: package-1
       path : "./"
       pattern:
-        # glob-patterns to discover tests to run in case of postMerge
+        # glob-patterns to discover tests to run in case of postMerge.
         - ""
       framework : golang
       preRun: 
